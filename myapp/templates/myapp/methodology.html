@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}
+        {% endblock %}</title>
+  </head>
+  <body>
+
+  <h2>Home Page</h2>
+        {% block content %}
+        
+
+
+          <div class="container text-center">
+            <h3 style="color:red;">Warning - This project is still under development</h3>
+            <br>
+            <div class="row">
+              <div class="col border border-success">
+                <h2>Classification Model</h2>
+                <h3>The classification model was trained on the K-Nearest Neighbours algorithm</h3>
+                <h3>The data-set used for training was "load_digits" that comes bundled with the Scikit-learn library</h3>
+                <h3>The model was saved using the 'pickle' library</h3>
+
+                <hr>
+                <h2>Input</h2>
+                <h3>The input image must be of .jpg extension</h3>
+                <h3>The algorithm uses the 'Pillow' library edit the image performing the following process in sequence:</h3>
+                <h3>1. to crop the image to a square,</h3>
+                <h3>2. inverts the colour</h3>
+                <h3>3. converts the image to grayscale</h3>
+                <h3>4. resizes the to 8 x 8 pixel</h3>
+                <h3>5. assigns a value to each pixel according to its brightness</h3>
+                <h3>Now the image conforms to the parameters of the images on the "load_digits" dataset and can be analysed on the trained model</h3>
+
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+        {% endblock %}
+ </body>
+</html>

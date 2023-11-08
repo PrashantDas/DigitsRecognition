@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}
+        {% endblock %}</title>
+  </head>
+  <body>
+
+  <h2>Home Page</h2>
+        {% block content %}
+        
+
+
+          <div class="container text-center">
+            <h3 style="color:red;">Warning - This project is still under development</h3>
+            <br>
+            <div class="row">
+              <div class="col border border-success">
+                <h2>Input</h2>
+                <form action="." method="post" enctype="multipart/form-data">
+                  {% csrf_token %}
+                  {{ one_form|crispy }}
+                  <button type="submit" class="btn btn-success">submit</button>    
+                </form>
+                <div class="row">
+                  <div class="col">
+                    <img class="image-thumbnail" src="{{ image2 }}" alt="image awaited">
+                  </div>
+                </div>
+              </div>
+              <div class="col border border-success">
+                <h2>Recognized by the model as:</h2>
+                <h1>{{ image }}</h1>
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+        {% endblock %}
+ </body>
+</html>
